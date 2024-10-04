@@ -27,6 +27,7 @@ SplashScreen.preventAutoHideAsync();
 
 export default function RootLayout() {
   return (
+    // <GluestackUIProvider>
     <Providers>
       <Stack>
         <Stack.Screen name="(app)" options={{ headerShown: false }} />
@@ -34,10 +35,11 @@ export default function RootLayout() {
         <Stack.Screen name="login" options={{ headerShown: false }} />
       </Stack>
     </Providers>
+    // </GluestackUIProvider>
   );
 }
 
-function Providers({ children }: { children: React.ReactNode }) {
+function Providers({ children }: { children: React.ReactNode; }) {
   const theme = useThemeConfig();
   return (
     <GestureHandlerRootView
